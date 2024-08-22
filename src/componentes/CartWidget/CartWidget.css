@@ -1,0 +1,6 @@
+.ImagenCarrito {
+
+    width: 50px;
+    object-fit: contain;
+    cursor: pointer;
+}

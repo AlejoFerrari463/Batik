@@ -1,0 +1,35 @@
+.navbar-collapse {
+
+    display: grid;
+    justify-content: center;
+    justify-content: space-between;
+    margin-right: 170px;
+
+}
+
+.navbar-fondo {
+
+    background-color: #010101;
+
+}
+
+.nav-item{
+
+    margin: 0 6px;
+
+}
+
+.nav-link {
+
+    color: #69C9D0;
+    font-size: 20px;
+
+}
+
+.nav-link:hover {
+
+    color: #69C9D0;
+    font-weight: bold;
+    border-bottom: 1px solid #69C9D0;
+
+}
