@@ -34,3 +34,9 @@
     border-bottom: 1px solid #69C9D0;
 
 }
+
+.nav-link:focus {
+
+  color: #69C9D0;
+
+}
