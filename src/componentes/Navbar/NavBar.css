@@ -1,9 +1,10 @@
 .navbar-collapse {
 
-    display: grid;
-    justify-content: center;
-    justify-content: space-between;
-    margin-right: 170px;
+    display: flex;
+    justify-content: start;
+    margin-left: 120px;
+
+  
 
 }
 

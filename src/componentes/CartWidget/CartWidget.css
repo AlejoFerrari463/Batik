@@ -3,4 +3,12 @@
     width: 50px;
     object-fit: contain;
     cursor: pointer;
+   
+}
+
+.CantidadEnCarrito {
+
+    color: wheat;
+    font-size: 20px;
+
 }

@@ -1,0 +1,11 @@
+.contenedor-cards {
+
+    display: grid;
+    justify-items: center;
+    margin-top: 30px;
+
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+
+}
