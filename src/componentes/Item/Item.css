@@ -1,0 +1,43 @@
+.cards {
+
+    width: 440px;
+    height: 500px;
+    
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   position: relative;
+
+    margin-bottom: 70px;
+    border-radius: 5px;
+
+    box-shadow: 2px 2px 10px #EE1D52;
+
+
+}
+
+.cards:hover{
+
+    box-shadow: 2px 2px 10px #EE1D52, -2px -2px 10px #EE1D52;
+
+}
+
+.cards img {
+
+    height: 400px;
+    object-fit: contain;
+  
+
+}
+
+.cards-id{
+
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 20px;
+
+}

@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <ItemListContainer referencia="ESTE ES EL ITEM LIST CONTAINER" />
+      <ItemListContainer/>
     </>
   )
 }
