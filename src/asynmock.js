@@ -19,3 +19,16 @@ export const obtenerProductos = () =>{
 
 
 }
+
+export const obtenerUnProducto = (id) =>{
+
+    return new Promise((resolve)=>{
+
+        const producto = misProductos.find((item)=>item.id == id)
+
+        resolve(producto)
+
+    })
+
+
+}

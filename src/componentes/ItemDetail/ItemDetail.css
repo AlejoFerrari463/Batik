@@ -1,0 +1,22 @@
+.card-detail {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 500px;
+    
+    box-shadow: 5px 5px 10px #3c7c1e, -5px -5px 10px #3c7c1e;
+    border-radius: 5px;
+
+
+
+}
+
+.card-detail img {
+
+    width: 400px;
+    object-fit: contain;
+
+}
