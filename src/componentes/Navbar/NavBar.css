@@ -17,6 +17,7 @@
 .nav-item{
 
     margin: 0 6px;
+    color: red;
 
 }
 
@@ -26,6 +27,7 @@
     font-size: 20px;
 
 }
+
 
 .nav-link:hover {
 

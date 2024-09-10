@@ -2,9 +2,16 @@ import React from 'react'
 
 import "./Brand.css"
 
+import { Link } from 'react-router-dom'
+
 const Brand = () => {
   return (
-    <div className='TituloPrincipal' >BATIK</div>
+
+   <Link to="/"  className='TituloPrincipal' >
+      <div  >BATIK</div>
+   </Link>
+
+   
   )
 }
 

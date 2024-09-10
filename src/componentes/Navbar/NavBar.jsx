@@ -3,6 +3,7 @@ import React from 'react'
 import "./NavBar.css"
 import Brand from '../Brand/Brand'
 import CartWidget from '../CartWidget/CartWidget'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -15,20 +16,18 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
             <li className="nav-item">
-            <a className="nav-link" aria-current="page" href="#">Home</a>
+              <Link className="nav-link" to="/" > Home </Link>
             </li>
             <li className="nav-item">
-            <a className="nav-link" href="#">Remeras</a>
+            <Link className="nav-link" to="/camperas" > Camperas </Link>
             </li>
             <li className="nav-item">
-            <a className="nav-link" href="#">Pantalones</a>
+            <Link className="nav-link" to="/remeras" > Remeras </Link>
             </li>
             <li className="nav-item">
-            <a className="nav-link" href="#">Zapatillas</a>
+            <Link className="nav-link" to="/zapatillas" > Zapatillas </Link>
             </li>
-            <li className="nav-item">
-            <a className="nav-link" href="#">Novedades</a>
-            </li>
+            
         </ul>
         </div>
         <CartWidget/>
