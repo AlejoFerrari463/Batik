@@ -2,23 +2,28 @@ import React from 'react'
 
 import { useState, useEffect } from 'react'
 
-import { obtenerProductos } from '../../asynmock' 
+import { obtenerProductos, obtenerProductosCategoria } from '../../asynmock' 
 
 import "./ItemListContainer.css"
 import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
+
+  const {idCategoria} = useParams()
   
   useEffect(()=>{
 
-      obtenerProductos()
-      .then((response)=>setProductos(response))
-      .catch((error)=>console.log(error))
+    const obtenerInfo =  idCategoria ? obtenerProductosCategoria : obtenerProductos
+
+    obtenerInfo(idCategoria)
+    .then((response)=>setProductos(response))
+    .catch((error)=>console.log(error))
 
 
-  },[])
+  },[idCategoria])
   
   return (
 

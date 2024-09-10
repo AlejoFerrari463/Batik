@@ -1,7 +1,7 @@
 .cards {
 
-    width: 500px;
-    height: 600px;
+    width: 570px;
+    height: auto;
     
 
    display: flex;
@@ -13,6 +13,7 @@
 
     margin-bottom: 70px;
     border-radius: 5px;
+    padding-bottom: 30px;
 
     box-shadow: 2px 2px 10px #EE1D52;
 
@@ -27,7 +28,7 @@
 
 .cards img {
 
-    height: 400px;
+    height: 360px;
     object-fit: contain;
   
 
@@ -47,6 +48,16 @@
     border-radius: 5px;
     border: none;
     background-color: gold;
+    font-size: 15px;
+    padding: 5px;
+    text-decoration: none;
+
+}
+
+.cards-body {
+
+
+    text-align: center;
     font-size: 20px;
 
 }

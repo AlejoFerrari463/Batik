@@ -19,13 +19,13 @@ const NavBar = () => {
               <Link className="nav-link" to="/" > Home </Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to="/camperas" > Camperas </Link>
+            <Link className="nav-link" to="/categoria/camperas" > Camperas </Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to="/remeras" > Remeras </Link>
+            <Link className="nav-link" to="/categoria/remeras" > Remeras </Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to="/zapatillas" > Zapatillas </Link>
+            <Link className="nav-link" to="/categoria/zapatillas" > Zapatillas </Link>
             </li>
             
         </ul>

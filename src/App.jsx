@@ -1,12 +1,9 @@
 import React from "react"
 import NavBar from "./componentes/Navbar/NavBar"
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer"
-import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Zapatillas from "./componentes/Zapatillas/Zapatillas"
-import Home from "./componentes/Home/Home"
-import Remeras from "./componentes/Remeras/Remeras"
-import Camperas from "./componentes/Camperas/Camperas"
+import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer"
+
 
 
 
@@ -23,13 +20,9 @@ function App() {
 
           <Routes>
 
-            <Route path="/" element={<Home/>} />
-            <Route path="/zapatillas" element={<Zapatillas/>} />
-            <Route path="/remeras" element={<Remeras/>} />
-            <Route path="/camperas" element={<Camperas/>} />
-
-            
-
+            <Route path="/"  element={<ItemListContainer/>}/>
+            <Route path="/categoria/:idCategoria"  element={<ItemListContainer/>}/>
+            <Route path="/item/:idItem" element={<ItemDetailContainer/>}/>
 
           </Routes>
       
