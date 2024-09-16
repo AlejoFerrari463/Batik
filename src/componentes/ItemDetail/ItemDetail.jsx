@@ -14,7 +14,6 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
 
     setAgregarCantidad(cantidad)
-    console.log("Productos: "+cantidad)
 
 
   }
@@ -47,8 +46,14 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
         {
 
+          stock < 3 ? <h5 className='text-center' >ULTIMAS {stock} UNIDADES </h5> : console.log()
 
-          agregarCantidad > 0 ? <button>Ir al carro</button> :  <Counter inicial={1} stock={stock} funcionAgregar={funcionAgregar} />
+        }
+
+        {
+
+
+          agregarCantidad > 0 ? <div className='contenedor-boton-carro' ><button className='boton-carro' >Ir al carro</button></div>  :  <Counter inicial={1} stock={stock} funcionAgregar={funcionAgregar} />
 
 
         }

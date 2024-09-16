@@ -1,6 +1,6 @@
 const misProductos = [
 
-    { id:1, nombre: "Zapatillas Nike Jordan 1", precio: 200000, imagen:"../img/1-ZapasNikeJordan.png", categoria: "zapatillas",descripcion: "Jordan 1 Para Hombres Retro",stock: 11 },
+    { id:1, nombre: "Zapatillas Nike Jordan 1", precio: 200000, imagen:"../img/1-ZapasNikeJordan.png", categoria: "zapatillas",descripcion: "Jordan 1 Para Hombres Retro",stock: 2 },
     { id:2, nombre: "Campera Adidas Beckenbauer", precio: 150000, imagen: "../img/2-CamperaAdidas.webp", categoria: "camperas", descripcion: "Campera Retro Alemania VerdeAmarilla",stock: 11 },
     { id:3, nombre: "Rompe Viento Nike Repel", precio: 100000, imagen: "../img/3-RompeViento.jfif", categoria: "camperas", descripcion: "Rompeviento Nike Anti Agua",stock: 11 },
     { id:4, nombre: "Lebron XXI", precio: 230000, imagen: "../img/4-ZapatillasLebron.webp", categoria: "zapatillas", descripcion: "Lebron XXI Moradas",stock: 11 },

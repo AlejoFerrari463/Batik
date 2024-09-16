@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useState,useEffect } from 'react'
 
+import "./Counter.css"
 
 const Counter = ({inicial, stock, funcionAgregar}) => {
 
@@ -35,19 +36,27 @@ const Counter = ({inicial, stock, funcionAgregar}) => {
   return (
 
 
-    <div>
+    <div className='contenedor-counter' >
 
-        <button onClick={sumarContador} >+</button>
+        <div className='counter' >
+
+
+        <button className='me-2 boton-contador' onClick={sumarContador} >+</button>
         <div>{contador}</div>
-        <button onClick={restarContador} >-</button>
+        <button className='ms-2 boton-contador' onClick={restarContador} >-</button>
 
 
-        <button onClick={()=>funcionAgregar(contador)} >Aceptar</button>
+        </div>
+
+
+        <button className='boton-aceptar' onClick={()=>funcionAgregar(contador)} >Aceptar</button>
+
 
 
     </div>
 
 
+   
     
   )
 }
