@@ -3,18 +3,25 @@ import React, { useState } from 'react'
 import "./ItemDetail.css"
 import "../Item/Item.css"
 import Counter from '../Counter/Counter'
-import { Link } from 'react-router-dom'
+
+import { carritoContext } from '../../context/carritoContext'
+import { useContext } from 'react'
 
 const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
   const [agregarCantidad , setAgregarCantidad] = useState(0)
-
+  const {agregarAlCarrito} = useContext(carritoContext)
 
   const funcionAgregar = (cantidad) =>{
 
 
     setAgregarCantidad(cantidad)
 
+
+    const item = {id,nombre,precio}
+ 
+    agregarAlCarrito(item,cantidad)
+    
 
   }
 
@@ -46,7 +53,7 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
         {
 
-          stock < 3 ? <h5 className='text-center' >ULTIMAS {stock} UNIDADES </h5> : console.log()
+          stock < 3 ? <h5 className='text-center' >ULTIMAS {stock} UNIDADES </h5> : ""
 
         }
 

@@ -30,7 +30,7 @@ const ItemListContainer = () => {
     <div className='container-fluid' >
 
       <h1 className='text-center mt-5 mb-5' >MIS PRODUCTOS</h1>
-      <ItemList productos={productos} />
+      <ItemList produ={productos} />
       
     </div>
 

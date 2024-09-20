@@ -3,6 +3,9 @@ import NavBar from "./componentes/Navbar/NavBar"
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer"
+import { CarritoProvider } from "./context/carritoContext"
+
+
 
 
 
@@ -15,7 +18,9 @@ function App() {
     <>
 
       <BrowserRouter>
-      
+      <CarritoProvider>
+
+
         <NavBar/>
 
           <Routes>
@@ -26,7 +31,9 @@ function App() {
 
           </Routes>
       
+
       
+      </CarritoProvider>
       </BrowserRouter>
 
      

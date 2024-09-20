@@ -3,14 +3,14 @@ import Item from '../Item/Item'
 
 import "./Itemlist.css"
 
-const ItemList = ({productos}) => {
+const ItemList = ({produ}) => {
   return (
    
     <div className='contenedor-cards' >
 
       {
         
-        productos.map((item)=>(
+        produ.map((item)=>(
 
 
           
