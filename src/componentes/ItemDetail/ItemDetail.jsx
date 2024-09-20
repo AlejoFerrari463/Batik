@@ -7,6 +7,8 @@ import Counter from '../Counter/Counter'
 import { carritoContext } from '../../context/carritoContext'
 import { useContext } from 'react'
 
+import { Link } from 'react-router-dom'
+
 const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
   const [agregarCantidad , setAgregarCantidad] = useState(0)
@@ -60,7 +62,7 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
         {
 
 
-          agregarCantidad > 0 ? <div className='contenedor-boton-carro' ><button className='boton-carro' >Ir al carro</button></div>  :  <Counter inicial={1} stock={stock} funcionAgregar={funcionAgregar} />
+          agregarCantidad > 0 ? <div className='contenedor-boton-carro' ><Link to={"/cart"}  className='boton-carro' >Ir al carro</Link></div>  :  <Counter inicial={1} stock={stock} funcionAgregar={funcionAgregar} />
 
 
         }

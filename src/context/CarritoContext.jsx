@@ -20,8 +20,7 @@ export const CarritoProvider = ({children}) =>{
     const [total, setTotal] = useState(0)
 
     console.log(carrito)
-    console.log(cantidad)
-    console.log(total)
+
 
     const agregarAlCarrito = (item,cantidad) =>{
 
@@ -71,10 +70,18 @@ export const CarritoProvider = ({children}) =>{
 
     }
 
+    const vaciarCarrito = () =>{
+
+        setCarrito([])
+        setCantidad(0)
+        setTotal(0)
+
+    }
+
 
     return (
 
-        <carritoContext.Provider  value={{carrito,cantidad,total,agregarAlCarrito}} >
+        <carritoContext.Provider  value={{carrito,cantidad,total,agregarAlCarrito,eliminarProductoDeCarrito,vaciarCarrito}} >
             {children}
         </carritoContext.Provider>
 
