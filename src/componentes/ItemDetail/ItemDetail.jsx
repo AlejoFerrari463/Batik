@@ -20,7 +20,7 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
     setAgregarCantidad(cantidad)
 
 
-    const item = {id,nombre,precio}
+    const item = {id,nombre,precio,imagen}
  
     agregarAlCarrito(item,cantidad)
     
