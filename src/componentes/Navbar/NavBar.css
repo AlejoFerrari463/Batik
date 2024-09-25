@@ -16,20 +16,23 @@
 
 .nav-item{
 
-    margin: 0 6px;
+    margin: 0 10px;
+;
    
 
 }
 
-.nav-link {
+.nav-links {
 
     color: #FFEDCB;
     font-size: 20px;
+    text-decoration: none;
+
 
 }
 
 
-.nav-link:hover {
+.nav-links:hover {
 
     color: #FFEDCB;
     font-weight: bold;
@@ -37,7 +40,7 @@
 
 }
 
-.nav-link:focus {
+.nav-links:focus {
 
   color: #FFEDCB;
 

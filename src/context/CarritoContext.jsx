@@ -2,6 +2,8 @@ import React from "react";
 
 import { useState, createContext } from "react";
 
+import Swal from "sweetalert2";
+
 
 export const carritoContext = createContext({
 
@@ -72,9 +74,22 @@ export const CarritoProvider = ({children}) =>{
 
     const vaciarCarrito = () =>{
 
-        setCarrito([])
-        setCantidad(0)
-        setTotal(0)
+       
+        Swal.fire({
+            title: "Seguro deseas vaciar el carrito?",
+            showDenyButton: true,
+            confirmButtonText: "Eliminar",
+            denyButtonText: `Cancelar`
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire("Carrito vacio!", "", "success");
+              setCarrito([])
+              setCantidad(0)
+              setTotal(0)
+
+            } 
+          });
 
     }
 

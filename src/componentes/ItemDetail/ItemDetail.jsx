@@ -9,6 +9,8 @@ import { useContext } from 'react'
 
 import { Link } from 'react-router-dom'
 
+import { Bounce, toast, Zoom } from 'react-toastify';
+
 const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
   const [agregarCantidad , setAgregarCantidad] = useState(0)
@@ -23,6 +25,19 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
     const item = {id,nombre,precio,imagen}
  
     agregarAlCarrito(item,cantidad)
+
+    toast.success('Producto agregado con exito!', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Zoom,
+     
+      });
     
 
   }

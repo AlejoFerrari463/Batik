@@ -5,8 +5,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer"
 import { CarritoProvider } from "./context/carritoContext"
 import Cart from "./componentes/Cart/Cart"
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -36,6 +37,7 @@ function App() {
 
       
       </CarritoProvider>
+      <ToastContainer/>
       </BrowserRouter>
 
      
