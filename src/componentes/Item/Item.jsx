@@ -8,7 +8,6 @@ const Item = ({id,nombre,precio,imagen}) => {
   return (
     <div className='cards' >
 
-      <div className='cards-id' >{id}</div>
       <img src={imagen} alt={nombre} /> 
       <div className='cards-body' >
         <div>{nombre}</div>

@@ -2,12 +2,16 @@ import React from 'react'
 
 import { useState, useEffect } from 'react'
 
-import { obtenerProductos, obtenerProductosCategoria } from '../../asynmock' 
+//import { obtenerProductos, obtenerProductosCategoria } from '../../asynmock' 
 
 import "./ItemListContainer.css"
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import { Loader } from '../Loader/Loader'
+
+import { db } from '../../services/config'
+import { collection,getDocs,query,where } from 'firebase/firestore'
+
 
 const ItemListContainer = () => {
 
@@ -19,12 +23,35 @@ const ItemListContainer = () => {
   
   useEffect(()=>{
     setLoader(true)
-    const obtenerInfo =  idCategoria ? obtenerProductosCategoria : obtenerProductos
+    const obtenerInfo =  idCategoria ? query(collection(db,"productos"), where ("categoria","==",idCategoria)) : collection(db,"productos")
 
-    obtenerInfo(idCategoria)
-    .then((response)=>setProductos(response))
-    .catch((error)=>console.log(error))
+
+    getDocs(obtenerInfo)
+    .then( res => {
+      
+      const filtrarProductos = res.docs.map(doc => {
+        const data = doc.data();
+        return {id: doc.id,...data}
+
+       
+
+      })
+
+      setProductos(filtrarProductos)
+
+
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
     .finally(()=>setLoader(false))
+
+
+
+    // obtenerInfo(idCategoria)
+    // .then((response)=>setProductos(response))
+    // .catch((error)=>console.log(error))
+    // .finally(()=>setLoader(false))
 
 
   },[idCategoria])

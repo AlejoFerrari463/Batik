@@ -10,6 +10,7 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Bounce, toast, Zoom } from 'react-toastify';
+import { Loader } from '../Loader/Loader'
 
 const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
@@ -46,7 +47,7 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
   return (
     
 
-    id == null ? <h1>NO TENEMOS ESE PRODUCTO</h1> :
+    id == null ? <Loader/> :
 
     <div>
 
@@ -54,8 +55,6 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
 
         <div className='cards-detail-mostrar' >
-
-          <div className='cards-id' >{id}</div>
             
           <img src={imagen} alt={nombre} /> 
           <div className='cards-body' >
