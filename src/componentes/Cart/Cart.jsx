@@ -48,7 +48,10 @@ const Cart = () => {
         <h3>Total: ${total}</h3>
     
         <button onClick={()=>vaciarCarrito()} >VACIAR CARRITO</button>
-    
+        
+        <br />
+
+        <Link to={"/checkout"} >FINALIZAR COMPRA</Link>
     
     </div>
     
