@@ -4,11 +4,14 @@ import React, { useState } from 'react'
 import { carritoContext } from '../../context/carritoContext'
 import { useContext } from 'react'
 
+import { addDoc, collection} from 'firebase/firestore'
+
+import { db } from '../../services/config'
 
 
 const Checkout = () => {
 
-  const {carrito, cantidad,total,vaciarCarrito} = useContext(carritoContext)
+  const {carrito,total,vaciarCarritoSinAlert} = useContext(carritoContext)
 
   const [nombre, setNombre] = useState("")
   const [apellido, setApellido] = useState("")
@@ -39,7 +42,43 @@ const Checkout = () => {
 
       else {
 
-        console.log("amda")
+        const orden = {
+
+          items: carrito.map((prod)=>{
+
+            return {
+
+              id: prod.item.id,
+              nombre: prod.item.nombre,
+              cantidad: prod.cantidad
+
+            }
+
+
+          }),
+          nombre: nombre,
+          apellido: apellido,
+          email: email
+
+
+        } 
+
+
+        addDoc(collection(db,"ordenes"),orden)
+        .then((docRef)=>{
+          setOrdenId(docRef.id)
+          vaciarCarritoSinAlert()
+          setNombre("")
+          setApellido("")
+          setEmail("")
+          setError("")
+          setEmailConfirmacion("")
+        })
+        .catch((error)=>{
+          console.log(error)
+        })
+
+       
 
 
       }
@@ -104,6 +143,7 @@ const Checkout = () => {
 
         </form>
 
+        {ordenId && <h2>FELICIADES! TU ORDEN DE COMPRA ES: {ordenId}</h2>}
        
 
        
