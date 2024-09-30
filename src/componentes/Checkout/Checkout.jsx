@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { carritoContext } from '../../context/carritoContext'
 import { useContext } from 'react'
 
-import { addDoc, collection} from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, updateDoc} from 'firebase/firestore'
 
 import { db } from '../../services/config'
 
@@ -63,20 +63,49 @@ const Checkout = () => {
 
         } 
 
+        Promise.all(
+
+          orden.items.map(async (prod)=>{
+
+            const productoReferencia = doc(db,"productos",prod.id)
+
+            const productoDocumento = await getDoc(productoReferencia)
+
+            const stockActual = productoDocumento.data().stock
+
+            await updateDoc(productoReferencia,{
+
+              stock: stockActual - prod.cantidad
+
+            })
+
+          })
+
+
+        )
+        .then(()=>{
 
         addDoc(collection(db,"ordenes"),orden)
-        .then((docRef)=>{
-          setOrdenId(docRef.id)
-          vaciarCarritoSinAlert()
-          setNombre("")
-          setApellido("")
-          setEmail("")
-          setError("")
-          setEmailConfirmacion("")
+          .then((docRef)=>{
+            setOrdenId(docRef.id)
+            vaciarCarritoSinAlert()
+            setNombre("")
+            setApellido("")
+            setEmail("")
+            setError("")
+            setEmailConfirmacion("")
+          })
+          .catch((error)=>{
+            console.log(error)
+          })
+
         })
         .catch((error)=>{
           console.log(error)
         })
+
+
+        
 
        
 
