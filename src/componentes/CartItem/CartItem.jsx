@@ -12,7 +12,7 @@ const CartItem = ({item,cantidad}) => {
 
 
   return (
-    <div className='mb-5' >
+    <div className='mb-5 productos-cart' >
 
         <h2>{item.nombre}</h2>
         <h3>${item.precio}</h3>

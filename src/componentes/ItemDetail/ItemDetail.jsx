@@ -67,11 +67,9 @@ const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {
 
         <h3 className='text-center' >{descripcion}</h3>
 
-        {
+       
 
-          stock < 3 ? <h5 className='text-center' >ULTIMAS {stock} UNIDADES </h5> : ""
-
-        }
+        {stock<3 && <h5 className='text-center' >ULTIMAS {stock} UNIDADES </h5>}
 
         {
 

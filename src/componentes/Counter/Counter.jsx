@@ -1,17 +1,17 @@
 import React from 'react'
 
-import { useState,useEffect } from 'react'
+import { useState } from 'react'
 
 import "./Counter.css"
 
-const Counter = ({inicial, stock, funcionAgregar}) => {
+const Counter = ({inicial,stock,funcionAgregar}) => {
 
     const [contador, setContador] = useState(inicial)
 
     const sumarContador = ()=>{
 
 
-        if (contador<stock){
+        if (contador<6 && contador<stock ){
 
             setContador(contador+1)
 

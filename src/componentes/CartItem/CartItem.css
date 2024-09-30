@@ -11,3 +11,20 @@
 
 
 }
+
+.productos-cart {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+   
+    height: 350px;
+    width: 400px;
+
+    background-color: rosybrown;
+    margin: 0 30px;
+
+
+
+} 

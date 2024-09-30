@@ -5,7 +5,7 @@ import { carritoContext } from '../../context/carritoContext'
 import { Link } from 'react-router-dom'
 import CartItem from '../CartItem/CartItem'
 
-
+import "./Cart.css"
 
 
 
@@ -38,11 +38,17 @@ const Cart = () => {
     
         <h2>PRODUCTOS EN EL CARRO</h2>
 
+        <div className='contenedor-productos-cart' >
+
         {
 
             carrito.map((prod)=>  <CartItem key={prod.item.id} {...prod} />  )
 
         }
+
+        </div>
+
+       
 
         <h3>Cantidad Total de productos: {cantidad}</h3>
         <h3>Total: ${total}</h3>
