@@ -4,32 +4,12 @@ import { useState } from 'react'
 
 import "./Counter.css"
 
+import { useContador } from '../../customHooks/useContador'
+
 const Counter = ({inicial,stock,funcionAgregar}) => {
 
-    const [contador, setContador] = useState(inicial)
 
-    const sumarContador = ()=>{
-
-
-        if (contador<6 && contador<stock ){
-
-            setContador(contador+1)
-
-        }
-
-       
-
-    }
-
-    const restarContador = ()=>{
-
-        if(contador>inicial){
-            setContador(contador-1)
-        }
-
-       
-
-    }
+    const {contador, sumarContador, restarContador} = useContador(stock,inicial)
 
 
 

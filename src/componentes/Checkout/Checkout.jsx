@@ -15,10 +15,12 @@ const Checkout = () => {
 
   const [nombre, setNombre] = useState("")
   const [apellido, setApellido] = useState("")
+  const [telefono, setTelefono] = useState("")
   const [email, setEmail] = useState("")
   const [emailConfirmacion, setEmailConfirmacion] = useState("")
   const [error, setError] = useState("")
   const [ordenId, setOrdenId] = useState("")
+
 
   const manejadorFormulario = (e)=>{
     e.preventDefault()
@@ -58,7 +60,9 @@ const Checkout = () => {
           }),
           nombre: nombre,
           apellido: apellido,
-          email: email
+          email: email,
+          telefono: telefono,
+          fecha: new Date()
 
 
         } 
@@ -158,6 +162,11 @@ const Checkout = () => {
         <input type="text" id='apellido'  onChange={(e)=>setApellido(e.target.value)} value={apellido} />
         <br />
 
+        <label htmlFor="telefono">Telefono: </label>
+        <input type="text" id='telefono'  onChange={(e)=>setTelefono(e.target.value)} value={telefono} />
+        <br />
+
+
         <label htmlFor="email">Email: </label>
         <input type="email" id='email'  onChange={(e)=>setEmail(e.target.value)} value={email} />
         <br />
@@ -166,6 +175,7 @@ const Checkout = () => {
         <input type="email" id='emailConfir'  onChange={(e)=>setEmailConfirmacion(e.target.value)} value={emailConfirmacion} />
         <br />
 
+     
         {error && <p> {error} </p>}
 
         <button type='sumbit' >COMPRAR</button>
