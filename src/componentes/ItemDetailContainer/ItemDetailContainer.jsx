@@ -34,14 +34,7 @@ const ItemDetailContainer = () => {
 
   },[idItem])
 
-  // useEffect(()=>{
-
-   
-  //   obtenerUnProducto(idItem)
-  //   .then((response)=>{setProducto(response)})
-  //   .catch((error)=>{console.log(error)})
-
-  // },[idItem])
+ 
 
   return (
 

@@ -2,9 +2,8 @@ import React from 'react'
 
 import { useState, useEffect } from 'react'
 
-//import { obtenerProductos, obtenerProductosCategoria } from '../../asynmock' 
 
-import "./ItemListContainer.css"
+
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import { Loader } from '../Loader/Loader'
@@ -23,7 +22,7 @@ const ItemListContainer = () => {
   
   useEffect(()=>{
     setLoader(true)
-    const obtenerInfo =  idCategoria ? query(collection(db,"productos"), where ("categoria","==",idCategoria)) : collection(db,"productos")
+    const obtenerInfo =  idCategoria ? query(collection(db,"productos"), where ("categoria","==",idCategoria)): collection(db,"productos")
 
 
     getDocs(obtenerInfo)

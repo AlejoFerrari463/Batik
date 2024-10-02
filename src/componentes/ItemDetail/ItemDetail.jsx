@@ -9,7 +9,7 @@ import { useContext } from 'react'
 
 import { Link } from 'react-router-dom'
 
-import { Bounce, toast, Zoom } from 'react-toastify';
+import { toast, Zoom } from 'react-toastify';
 import { Loader } from '../Loader/Loader'
 
 const ItemDetail = ({id,nombre,imagen,precio,descripcion,stock}) => {

@@ -50,7 +50,7 @@ const NavBar = () => {
         </div>
 
         <div className="form-check form-switch">
-          <input onChange={manejarToogler} class="form-check-input" type="checkbox" role="switch" />
+          <input onChange={manejarToogler} className="form-check-input" type="checkbox" role="switch" />
         </div>
 
         <CartWidget/>

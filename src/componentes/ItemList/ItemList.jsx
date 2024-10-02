@@ -13,8 +13,9 @@ const ItemList = ({produ}) => {
         produ.map((item)=>(
 
 
+          item.stock > 0 &&   <Item key={item.id} {...item} />
           
-          <Item key={item.id} {...item} />
+
           
          
         ))

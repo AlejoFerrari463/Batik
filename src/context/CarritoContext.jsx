@@ -21,7 +21,7 @@ export const CarritoProvider = ({children}) =>{
     const [cantidad, setCantidad] = useState(0)
     const [total, setTotal] = useState(0)
 
-    console.log(carrito)
+
 
 
     const agregarAlCarrito = (item,cantidad) =>{
