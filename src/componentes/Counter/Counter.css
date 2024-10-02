@@ -24,9 +24,10 @@
   
     border-radius: 5px;
     border: none;
-    background-color: gold;
+    background-color: #131318;
     font-size: 20px;
     text-decoration: none;
+    color: white;
 
 }
 
@@ -34,10 +35,10 @@
 
     border-radius: 5px;
     border: none;
-    background-color: gold;
+    background-color: #131318;
     font-size: 20px;
     text-decoration: none;
     width: 30px;
-   
+    color: white;   
 
 }

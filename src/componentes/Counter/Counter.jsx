@@ -21,7 +21,7 @@ const Counter = ({inicial,stock,funcionAgregar}) => {
 
 
         <button className='me-2 boton-contador' onClick={sumarContador} >+</button>
-        <div>{contador}</div>
+        <div className='fw-bold' >{contador}</div>
         <button className='ms-2 boton-contador' onClick={restarContador} >-</button>
 
 
