@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import "./ItemDetail.css"
-import "../Item/Item.css"
+
 import Counter from '../Counter/Counter'
 
 import { carritoContext } from '../../context/CarritoContext'

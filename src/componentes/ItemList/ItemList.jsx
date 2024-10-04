@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from '../Item/Item'
 
-import "./Itemlist.css"
+import "./ItemList.css"
 
 const ItemList = ({produ}) => {
   return (
