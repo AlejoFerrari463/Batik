@@ -49,6 +49,7 @@ const Checkout = () => {
 
       else {
 
+        setError("")
         setEsperandoOrden("Procesando pago..")
 
         const orden = {
@@ -107,7 +108,6 @@ const Checkout = () => {
             setNombre("")
             setApellido("")
             setEmail("")
-            setError("")
             setTelefono("")
             setEmailConfirmacion("")
            
@@ -201,7 +201,7 @@ if (carrito.length == 0 && !ordenId){
 
         </form>
 
-        {ordenId ? <h2 className='mt-2' >FELICIADES! TU ORDEN DE COMPRA ES: {ordenId}</h2> :<h2>{esperandoOrden}</h2> }
+        {ordenId ? <h2 className='mt-2' >FELICIDADES! TU ORDEN DE COMPRA ES: {ordenId}</h2> :<h2>{esperandoOrden}</h2> }
        
        
 
