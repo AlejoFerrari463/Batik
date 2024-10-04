@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from "./componentes/Checkout/Checkout"
+import Error404 from "./componentes/Error404/Error404"
 
 
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/item/:idItem" element={<ItemDetailContainer/>}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
+            <Route path="*" element={<Error404/>}/>
 
           </Routes>
       

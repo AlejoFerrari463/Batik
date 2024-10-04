@@ -8,6 +8,10 @@ import { addDoc, collection, doc, getDoc, updateDoc} from 'firebase/firestore'
 
 import { db } from '../../services/config'
 
+import "./Checkout.css"
+import ItemList from '../ItemList/ItemList'
+import { Navigate } from 'react-router-dom'
+
 
 const Checkout = () => {
 
@@ -20,12 +24,13 @@ const Checkout = () => {
   const [emailConfirmacion, setEmailConfirmacion] = useState("")
   const [error, setError] = useState("")
   const [ordenId, setOrdenId] = useState("")
+  const [esperandoOrden, setEsperandoOrden] = useState("")
 
 
   const manejadorFormulario = (e)=>{
     e.preventDefault()
 
-    if (!nombre || !apellido || !email  || !emailConfirmacion){
+    if (!nombre || !apellido || !email  || !emailConfirmacion || !telefono){
 
       setError("COMPLETE TODOS LOS CAMPOS")
       return;
@@ -44,7 +49,11 @@ const Checkout = () => {
 
       else {
 
+        setEsperandoOrden("Procesando pago..")
+
         const orden = {
+
+          
 
           items: carrito.map((prod)=>{
 
@@ -88,16 +97,20 @@ const Checkout = () => {
 
         )
         .then(()=>{
+          
 
         addDoc(collection(db,"ordenes"),orden)
           .then((docRef)=>{
+
             setOrdenId(docRef.id)
             vaciarCarritoSinAlert()
             setNombre("")
             setApellido("")
             setEmail("")
             setError("")
+            setTelefono("")
             setEmailConfirmacion("")
+           
           })
           .catch((error)=>{
             console.log(error)
@@ -123,10 +136,14 @@ const Checkout = () => {
 
   }
 
+ 
 
 
   return (
-    <div>
+
+    
+
+    <div className='contenedor-checkout' >
 
 
       {carrito.map((prod)=>{
@@ -134,10 +151,10 @@ const Checkout = () => {
       
 
             return( 
-                <div key={prod.item.id} >
+                <div className='text-center mt-4' key={prod.item.id} >
 
-                    <h1>{prod.item.nombre}</h1>
-                    <h2>{prod.cantidad} * ${prod.item.precio}</h2>
+                    <h2>{prod.item.nombre}</h2>
+                    <h3>{prod.cantidad} * ${prod.item.precio}</h3>
 
                     
 
@@ -149,40 +166,41 @@ const Checkout = () => {
 
       })}
 
-        <h5>TOTAL: ${total}</h5>
+        <h4 className='mt-3 mb-5' >TOTAL: ${total}</h4>
 
-        <form onSubmit={manejadorFormulario} >
+        <form className='contenedor-formulario ' onSubmit={manejadorFormulario} >
 
-        <label htmlFor="nombre">Nombre: </label>
+        <label htmlFor="nombre">Nombre</label>
         <input type="text" id='nombre' onChange={(e)=>setNombre(e.target.value)} value={nombre} />
         <br />
         
 
-        <label htmlFor="apellido">Apellido: </label>
+        <label htmlFor="apellido">Apellido</label>
         <input type="text" id='apellido'  onChange={(e)=>setApellido(e.target.value)} value={apellido} />
         <br />
 
-        <label htmlFor="telefono">Telefono: </label>
+        <label htmlFor="telefono">Telefono</label>
         <input type="text" id='telefono'  onChange={(e)=>setTelefono(e.target.value)} value={telefono} />
         <br />
 
 
-        <label htmlFor="email">Email: </label>
+        <label htmlFor="email">Email</label>
         <input type="email" id='email'  onChange={(e)=>setEmail(e.target.value)} value={email} />
         <br />
 
-        <label htmlFor="emailConfir">Confirme su email: </label>
+        <label htmlFor="emailConfir">Confirme su email</label>
         <input type="email" id='emailConfir'  onChange={(e)=>setEmailConfirmacion(e.target.value)} value={emailConfirmacion} />
         <br />
 
      
         {error && <p> {error} </p>}
 
-        <button type='sumbit' >COMPRAR</button>
+        <button className='boton-comprar' type='sumbit' >COMPRAR</button>
 
         </form>
 
-        {ordenId && <h2>FELICIADES! TU ORDEN DE COMPRA ES: {ordenId}</h2>}
+        {ordenId ? <h2 className='mt-2' >FELICIADES! TU ORDEN DE COMPRA ES: {ordenId}</h2> :<h2>{esperandoOrden}</h2> }
+       
        
 
        
