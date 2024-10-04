@@ -137,7 +137,9 @@ const Checkout = () => {
   }
 
  
-
+if (carrito.length == 0 && !ordenId){
+  return <Navigate to={"/"}/>
+}
 
   return (
 
