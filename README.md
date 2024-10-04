@@ -1,8 +1,27 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# BATIK COMERCIO  
+Este proyecto se trata de una pagina de venta de ropa, donde podremos navegar entre las distintas categorias de los productos (camperas, remeras, zapatillas, etc) o ver todos los productos juntos. Podremos ver el detalle de cada producto, agregarlo al carrito, eliminarlo del carrito y luego podemos comprar estos productos con un checkout donde ingresaremos nuestros datos y se nos generara una orden de compra, la cual se almacena en firebase.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## HERRAMIENTAS UTILIZADAS
+
+- HTML
+- CSS
+- JAVASCRIPT
+- REACT JS
+- BOOTSTRAP / REACT BOOTSTRAP
+- VITE
+- SWEETALERT2
+- FONT AWESOME
+- FIREBASE
+
+## Desplegar Proyecto
+
+Para desplegar este Proyecto
+- 1 git clone https://github.com/AlejoFerrari463/Batik.git
+- 2 cd Batik para entrar a la carpeta que clonamos
+- 3 ejecutamos el comando npm install para instalar el node modules
+- 4 abrimos el visual studio con el comando code .
+- 5 dentro del visual, abrimos la consola y ejecutamos npm run dev
+- 6 abrimos el link del localhost
