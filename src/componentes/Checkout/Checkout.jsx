@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 
 import { carritoContext } from '../../context/CarritoContext'
 
-
 import { useContext } from 'react'
 
 import { addDoc, collection, doc, getDoc, updateDoc} from 'firebase/firestore'
@@ -11,7 +10,6 @@ import { addDoc, collection, doc, getDoc, updateDoc} from 'firebase/firestore'
 import { db } from '../../services/config'
 
 import "./Checkout.css"
-import ItemList from '../ItemList/ItemList'
 import { Navigate } from 'react-router-dom'
 
 

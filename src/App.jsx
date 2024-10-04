@@ -10,7 +10,8 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from "./componentes/Checkout/Checkout"
 import Error404 from "./componentes/Error404/Error404"
-import  {CarritoProvider}  from "./context/CarritoContext"
+import { CarritoProvider } from "./context/CarritoContext"
+
 
 
 

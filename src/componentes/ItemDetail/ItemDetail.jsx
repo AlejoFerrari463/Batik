@@ -4,7 +4,7 @@ import "./ItemDetail.css"
 import "../Item/Item.css"
 import Counter from '../Counter/Counter'
 
-import { carritoContext } from '../../context/carritoContext'
+import { carritoContext } from '../../context/CarritoContext'
 import { useContext } from 'react'
 
 import { Link } from 'react-router-dom'

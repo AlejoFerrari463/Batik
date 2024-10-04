@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { carritoContext } from '../../context/carritoContext'
+import { carritoContext } from '../../context/CarritoContext'
 import { useContext } from 'react'
 
 import "./CartItem.css"
